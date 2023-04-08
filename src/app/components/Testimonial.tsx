@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 function Testimonial() {
     return (
@@ -19,4 +19,4 @@ function Testimonial() {
     )
 }
 
-export default Testimonial
+export default memo(Testimonial)

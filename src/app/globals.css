@@ -14,5 +14,8 @@
   @apply text-green-300;
 }
 .ct-input {
-  @apply outline-none border-none rounded-md px-8 py-4;
+  @apply outline-none;
+}
+.ct-center {
+  @apply flex items-center justify-center;
 }

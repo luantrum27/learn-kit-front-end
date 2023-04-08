@@ -1,11 +1,13 @@
-import React from 'react'
+import { memo, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { IoIosPeople } from 'react-icons/io'
 
 function Banner() {
     return (
         <section className="w-full bg-green-50 overflow-hidden">
             <div className="max-w-[1140px] mx-auto sm:px-[20px] px-[10px] flex flex-row gap-8 py-[100px]">
-                <div className="lg:basis-1/2 basis-full flex flex-col items-center lg:items-start">
+                <div
+                    className="lg:basis-1/2 basis-full flex flex-col items-center lg:items-start">
                     <h1 className="text-5xl font-bold text-graphite leading-[60px] tracking-wider text-center lg:text-left">Learn New <br /><span className="text-green-300"> Languages </span> and Move Forward</h1>
                     <div className="max-w-[500px] my-8">
                         <p className="text-graphite text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
@@ -68,5 +70,5 @@ function Banner() {
     )
 }
 
-export default Banner
+export default memo(Banner)
 

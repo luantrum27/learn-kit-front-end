@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 function Blog() {
@@ -21,4 +21,4 @@ function Blog() {
     )
 }
 
-export default Blog
+export default memo(Blog)

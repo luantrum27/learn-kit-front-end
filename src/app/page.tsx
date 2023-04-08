@@ -1,8 +1,5 @@
-import { plains } from "@/store/plans";
 import Banner from "./components/Banner";
-import CardCourse from "./components/CardCourse";
 import Navbar from "./components/Navbar";
-import PlainCard from "./components/PlainCard";
 import OurCourses from "./components/OurCourses";
 import JoinWithUs from "./components/JoinWithUs";
 import Plans from "./components/Plans";
@@ -13,7 +10,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage={"Home"} />
       <Banner />
       <OurCourses />
       <JoinWithUs />

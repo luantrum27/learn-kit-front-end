@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { BsPeople, BsBook } from 'react-icons/bs';
 import { FaMedal } from 'react-icons/fa';
 import { TbNetwork } from 'react-icons/tb';
@@ -68,4 +68,4 @@ function Testimonials() {
     )
 }
 
-export default Testimonials
+export default memo(Testimonials)

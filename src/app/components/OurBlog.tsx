@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Blog from './Blog'
 
 function OurBlog() {
@@ -25,4 +25,4 @@ function OurBlog() {
     )
 }
 
-export default OurBlog
+export default memo(OurBlog)

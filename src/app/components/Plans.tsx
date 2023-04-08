@@ -1,4 +1,4 @@
-import { plains } from '@/store/plans';
+import { plains } from '@/app/stores/plans';
 import React from 'react'
 import PlainCard from './PlainCard';
 

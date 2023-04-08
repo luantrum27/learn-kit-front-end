@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaFacebookF, FaTwitter, FaInstagramSquare, FaYoutube } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 import { MdEmail } from 'react-icons/md'
@@ -48,7 +48,7 @@ function Footer() {
             <p className='text-white text-lg font-semibold'>Stay Connected</p>
             <div className='w-[100px] h-[2px] bg-green-300 my-2'></div>
             <div className=' flex md:flex-row md:items-center gap-2 flex-col justify-center items-center'>
-              <input type="email" className='ct-input h-[54px] max-w-[220px] text-[#8D8C9B]' placeholder='Enter your email' />
+              <input type="email" className='ct-input h-[54px] max-w-[220px] px-8 rounded-md py-4 text-[#8D8C9B]' placeholder='Enter your email' />
               <button className="ct-btn h-[54px] bg-green-300 text-white px-6 py-3 rounded-md">Send</button>
             </div>
             <div className='flex flex-col gap-4 mt-[20px]'>
@@ -70,4 +70,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default memo(Footer)

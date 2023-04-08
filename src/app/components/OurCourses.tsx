@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import CardCourse from './CardCourse'
 
 function OurCourses() {
@@ -21,18 +21,9 @@ function OurCourses() {
                         ))
                     }
                 </div>
-                {/* <div className="w-[100vw] relative left-[calc(-50vw_+_50%)]">
-                    <div className='max-w-[1140px] mx-auto flex flex-row items-center justify-center flex-wrap gap-6 my-8'>
-                        {
-                            [1, 2, 3, 4, 5, 6].map(item => (
-                                <CardCourse key={item} />
-                            ))
-                        }
-                    </div>
-                </div> */}
             </div>
         </section >
     )
 }
 
-export default OurCourses
+export default memo(OurCourses)

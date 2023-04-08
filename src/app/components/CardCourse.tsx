@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { RiTimerFill } from 'react-icons/ri';
 import { BsFillCameraReelsFill } from 'react-icons/bs';
 import { AiOutlineAreaChart, AiFillStar } from 'react-icons/ai';
 
 function CardCourse() {
     return (
-        <div className="w-[360px] bg-white px-5 py-5 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] cursor-pointer">
+        <div className="max-w-[360px] mx-0 sm:mx-0 bg-white px-5 py-5 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] cursor-pointer">
             <div className="rounded-md">
                 <img className="rounded-md" src="/images/card_1.jpg" alt="card image" />
             </div>
@@ -54,4 +54,4 @@ function CardCourse() {
     )
 }
 
-export default CardCourse
+export default memo(CardCourse)

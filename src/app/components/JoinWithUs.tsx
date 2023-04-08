@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { MdOutlineDone } from 'react-icons/md';
 
 function JoinWithUs() {
@@ -60,4 +60,4 @@ function JoinWithUs() {
     )
 }
 
-export default JoinWithUs
+export default memo(JoinWithUs)
