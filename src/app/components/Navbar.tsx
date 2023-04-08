@@ -42,8 +42,8 @@ function Navbar({ currentPage }: { currentPage: string }) {
                     </div>
                 </div >
                 <ul className='basis-2/3 lg:flex lg:flex-row lg:justify-around hidden'>
-                    <li className={`ct-text-category ${currentPage === 'Home' ? 'ct-active' : ''}`}>Home</li>
-                    <li className={`ct-text-category ${currentPage === 'About us' ? 'ct-active' : ''}`}>About us</li>
+                    <li className={`ct-text-category ${currentPage === 'Home' ? 'ct-active' : ''}`}><Link className='flex flex-row items-center gap-2' href={'/'}>Home</Link></li>
+                    <li className={`ct-text-category ${currentPage === 'About us' ? 'ct-active' : ''}`}><Link className='flex flex-row items-center gap-2' href={'/pages/about-us'}>About us</Link></li>
                     <li className={`ct-text-category ${currentPage === 'Courses' ? 'ct-active' : ''}`}><Link className='flex flex-row items-center gap-2' href={'/pages/courses'}>Courses <BsChevronDown /></Link></li>
                     <li className={`ct-text-category ${currentPage === 'Instractor' ? 'ct-active' : ''}`}>Instractor</li>
                     <li className={`ct-text-category ${currentPage === 'Blog' ? 'ct-active' : ''}`}>Blog <BsChevronDown /></li>
