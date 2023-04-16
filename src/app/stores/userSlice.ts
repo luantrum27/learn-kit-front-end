@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IUserLogin } from "../interfaces/IUserLogin";
 import { RootState } from ".";
 import { IUserProfile } from "../interfaces/IUserProfile";
 

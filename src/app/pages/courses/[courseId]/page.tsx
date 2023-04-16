@@ -1,20 +1,25 @@
+'use client'
 import Footer from '@/app/components/Footer'
 import InformationCourse from '@/app/components/InformationCourse'
 import Navbar from '@/app/components/Navbar'
-import React from 'react'
+import React, { useState } from 'react'
 import { MdDone, MdKeyboardArrowUp, MdUpdate } from 'react-icons/md'
 import { AiFillTag } from 'react-icons/ai'
 import { FaUser, FaClock } from 'react-icons/fa'
 import { TbCircleDot } from 'react-icons/tb'
 
 function Course() {
+    const [toggle, setToggle] = useState({
+        indexItem: -1,
+        isShow: false
+    });
     return (
         <>
             <Navbar currentPage='' />
             <InformationCourse />
             <section className='w-full py-[100px]'>
                 <div className='bg-white max-w-[1140px] mx-auto'>
-                    <div className='flex lg:flex-row gap-8 flex-col'>
+                    <div className='flex lg:flex-row gap-8 flex-col px-[20px]'>
                         <div className='basis-2/3 border border-slate-300 px-[40px] py-[40px] rounded-md'>
                             <div>
                                 <img src="/images/avt_1.jpg" alt="" />
@@ -25,7 +30,7 @@ function Course() {
                             </div>
                             <div className='mt-[30px] flex flex-col gap-4'>
                                 <h1 className="text-graphite font-semibold text-lg">What You'll Learn</h1>
-                                <ul className='grid grid-cols-2 gap-3'>
+                                <ul className='grid md:grid-cols-2 gap-3 grid-cols-1'>
                                     <li className='flex flex-row items-center gap-3'>
                                         <div className='w-[15px] h-[15px] rounded-full bg-green-300 flex items-center justify-center'><MdDone color='#fff' /></div>
                                         <p className='text-[#8D8C9B] hover:text-green-300 transition duration-150'>Basic communication in English in everyday situations.</p>
@@ -62,21 +67,30 @@ function Course() {
                             </div>
                             <div className='my-[50px] w-full h-[1px] bg-slate-300'></div>
                             <div>
-                                <div className='flex flex-row items-center justify-between'>
+                                <div className='flex md:flex-row md:justify-between flex-col justify-center items-center '>
                                     <h1 className="text-graphite font-semibold text-lg">Curriculum</h1>
                                     <p className='text-graphite font-semibold'>26 Lesson <span className='text-[#8D8C9B]'>/ Lifetime</span></p>
                                 </div>
                                 <ul className='flex flex-col gap-4 mt-[30px]'>
                                     {
                                         [1, 2, 3, 4].map((item, index) => (
-                                            <li className='shadow-2xl cursor-pointer'>
-                                                <div className='px-[40px] py-[20px] bg-green-300 flex flex-row items-center justify-between'>
-                                                    <h1 className='font-semibold text-white'>Introduction</h1>
-                                                    <MdKeyboardArrowUp color='white' size='36' className='cursor-pointer' />
+                                            <li onClick={() => {
+                                                setToggle({
+                                                    indexItem: index,
+                                                    isShow: !toggle.isShow,
+                                                });
+                                            }} className='shadow-2xl cursor-pointer'>
+                                                <div className={`px-[40px] py-[20px] ${(toggle.indexItem === index && toggle.isShow) ? 'bg-green-300' : 'bg-white'} flex flex-row items-center justify-between`}>
+                                                    <h1 className={`font-semibold ${(toggle.indexItem === index && toggle.isShow) ? 'text-white' : 'text-green-300'}`}>Introduction</h1>
+                                                    <MdKeyboardArrowUp color={`${(toggle.indexItem === index && toggle.isShow) ? 'white' : '#03B97C'}`} size='36' className={`cursor-pointer ${(toggle.indexItem === index && toggle.isShow) ? 'rotate-180' : 'rotate-0'}`} />
                                                 </div>
-                                                <div className='px-[40px] py-[20px]'>
-                                                    <p className='text-[#8D8C9B]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                </div>
+                                                {
+                                                    (
+                                                        <div className={`px-[40px] py-[20px] ${(toggle.indexItem === index && toggle.isShow) ? 'block transition duration-200' : 'hidden'}`}>
+                                                            <p className='text-[#8D8C9B] md:line-clamp-none line-clamp-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        </div>
+                                                    )
+                                                }
                                             </li>
                                         ))
                                     }

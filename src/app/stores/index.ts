@@ -3,6 +3,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import createWebStorage from "redux-persist/es/storage/createWebStorage";
 import authReducer from './authSlice';
 import userReducer from './userSlice';
+import coursesReducer from './courseSlice';
 
 const createNoopStorage = () => {
     return {
@@ -28,7 +29,8 @@ const loginPersistConfig = {
 };
 const rootReducer = combineReducers({
     auth: persistReducer(loginPersistConfig, authReducer),
-    user: userReducer
+    user: userReducer,
+    courses: coursesReducer
 });
 const store = configureStore({
     reducer: rootReducer,

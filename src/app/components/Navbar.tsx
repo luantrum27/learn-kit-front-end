@@ -29,7 +29,7 @@ function Navbar({ currentPage }: { currentPage: string }) {
             await getUserProfile(dispatch);
         }
         handleGetProfileUser();
-    }, []);
+    }, [dispatch]);
 
     const userProfileStore = useAppSelector(selectUserProfile);
 
@@ -47,7 +47,7 @@ function Navbar({ currentPage }: { currentPage: string }) {
                     <li className={`ct-text-category ${currentPage === 'Courses' ? 'ct-active' : ''}`}><Link className='flex flex-row items-center gap-2' href={'/pages/courses'}>Courses <BsChevronDown /></Link></li>
                     <li className={`ct-text-category ${currentPage === 'Instractor' ? 'ct-active' : ''}`}>Instractor</li>
                     <li className={`ct-text-category ${currentPage === 'Blog' ? 'ct-active' : ''}`}>Blog <BsChevronDown /></li>
-                    <li className={`ct-text-category ${currentPage === 'Contact' ? 'ct-active' : ''}`}>Contact</li>
+                    <li className={`ct-text-category ${currentPage === 'Contact' ? 'ct-active' : ''}`}><Link className='flex flex-row items-center gap-2' href={'/pages/contact'}>Contact</Link></li>
                 </ul>
                 <div className='lg:basis-1/6 flex flex-row items-center justify-end relative'>
                     <div className='sm:flex sm:flex-row sm:items-center hidden lg:hidden'>
